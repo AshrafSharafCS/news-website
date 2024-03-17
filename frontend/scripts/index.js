@@ -1,7 +1,4 @@
-const author = $("#author");
-const title = $("#title");
-const content = $("#content");
-const addnewsBtn = $("#addnews");
+const form = $("#form");
 const newsContainer = $("#news-container");
 
 const viewNews = () => {
@@ -26,3 +23,12 @@ const displayNews = (article) => {
           <div>${article.content}</div>
           </div>`;
 };
+
+form.submit(() => {
+  let formdata = $(form).serialize();
+  $.ajax({
+    url: "http://localhost/news-website/backend/addnews.php",
+    method: "POST",
+    data: formdata,
+  });
+});

@@ -13,11 +13,11 @@
     </header>
     <section class="center flex">
         <div class="container flex column">
-            <form class="add flex row">
-                <input type="text" placeholder="Author" id="author" required/>
-                <input type="text" placeholder="Title" id="title" required/>
-                <input type="text" placeholder="Content" id="content" required/>
-                <button type="submit" class="add-btn" id="addnews">Add News</button>
+            <form class="add flex row" id="form">
+                <input type="text" placeholder="Author" name="author" required/>
+                <input type="text" placeholder="Title" name="title" required/>
+                <input type="text" placeholder="Content" name="content" required/>
+                <button type="submit" class="add-btn" name="addnews">Add News</button>
             </form>
 
             
@@ -29,7 +29,6 @@
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script> -->
     <script src="./frontend/scripts/index.js"></script>
   </body>
 </html>

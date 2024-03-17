@@ -9,12 +9,16 @@ switch($request_method){
         $response = getAllNews();
         echo json_encode($response);
 
-    // case 'POST':
-    //     $response = createNews();
-    //     echo json_encode($response);
-        
-}
+    case 'POST':
+        if(!empty($_POST["author"] && $_POST["title"] && $_POST["content"] )){
+            $author= $_POST["author"];
+            $title= $_POST["title"];
+            $content= $_POST["content"];
 
+            $response = createNews($author,$title,$content);
+            echo json_encode($response);  
+        }
+}
 
 
 function getAllNews(){
@@ -45,5 +49,22 @@ function getAllNews(){
     }
 
     return $response;
+
+}
+
+
+function createNews($author,$title,$content){
+    global $mysqli;
+    $response;
+    $query = $mysqli->prepare("INSERT INTO news (author,title,content) VALUES (?,?,?)");
+    $query->bind_param("sss", $author,$title,$content);
+    if($query->execute()){
+        $response["status"] = "Added Successfully";
+    }else{
+        $response["status"] = "Failed";
+    }
+
+    return $response;
+
 
 }

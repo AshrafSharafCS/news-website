@@ -14,5 +14,5 @@ if($query->execute()){
     }else{
         $response["status"] = "Failed";
     }
-echo $author;
+
 echo json_encode($response);

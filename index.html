@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./frontend/styles/common.css" />
+    <link rel="stylesheet" href="./frontend/styles/index.css" />
+    <title>News</title>
+  </head>
+  <body>
+    <header class="center flex">
+        <h1>Today News</h1>
+    </header>
+    <section class="center flex">
+        <div class="container flex column">
+            <form class="add flex row">
+                <input type="text" placeholder="Author"/>
+                <input type="text" placeholder="title"/>
+                <input type="text" placeholder="content"/>
+                <button type="submit">Add News</button>
+
+            </form>
+            <div id="news"></div>
+
+        </div>
+    </section>
+  </body>
+</html>
